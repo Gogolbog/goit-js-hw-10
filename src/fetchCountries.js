@@ -5,8 +5,7 @@ function fetchCountries(name) {
   return fetch(
     `${ENDPOINT}${name}${PARAMS}`
   )
-    .then((res) => { console.log(res); return res.json() })
-  .then(console.log)
+    .then((res) => { console.log(res); return res.json(); })
 }
 
   

@@ -16,7 +16,7 @@ input.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 function onInput(e) {
     const inputValue = e.target.value.trim();
 
-    if (inputValue === '') {
+    if (!inputValue) {
         countrylist.innerHTML = '';
         countryinfo.innerHTML = '';
         return;
@@ -30,10 +30,9 @@ function onInput(e) {
               );
               countrylist.innerHTML = '';
               countryinfo.innerHTML = '';
-              return;
             }
             
-            if (countries.length <= 10) {
+            if (countries.length >= 2 && countries.length <= 10 ) {
                 const listItemMarkup = countries.map(country =>
                   createCountryListItem(country).join('')
                 );
@@ -63,12 +62,11 @@ function onInput(e) {
 
 
 function createCountryListItem ({flags, name}) {
-    return
+    return 
     `
     <li class="country-list__item">
     <img class="country-list__flag" src="${flags.svg}" alt"${name} flag" width"30" />
     <h2 class="country-list__name">${name}</h2>
-
     </li>
     `;
 }
