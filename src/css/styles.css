@@ -1,3 +1,8 @@
+
+:root {
+  --main-color: rgb(0, 255, 64);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -13,7 +18,8 @@ body {
 }
 
 input[type="text"]:focus {
-  outline-color: orange;
+  outline-color: var(--main-color);
+  
 }
 
 
@@ -26,3 +32,30 @@ input[type="text"]:focus {
   cursor: pointer;
 
 }
+ img {
+  width: 50px;
+  margin-right: 20px;
+}
+
+ .country-list__item {
+  display: flex;
+  align-items: center;
+  padding-left: 0px;
+ }
+
+
+ .country-list__name {
+  color: var(--main-color);
+ }
+ .country-info__list {
+  list-style: none;
+  padding-left: 0;
+ }
+
+ .country-list {
+  padding-left: 0;
+ }
+
+ .country-info__name {
+  color: var(--main-color);
+ }

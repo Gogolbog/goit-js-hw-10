@@ -5,10 +5,14 @@ function fetchCountries(name) {
   return fetch(
     `${ENDPOINT}${name}${PARAMS}`
   )
-    .then((res) => { console.log(res); return res.json(); })
-}
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(respone.status);
+      }
+      return res.json();
+    })
+
+    }
 
   
-
-
   export { fetchCountries };
